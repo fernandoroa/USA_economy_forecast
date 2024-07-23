@@ -1,3 +1,21 @@
+<head>
+  <meta charset="utf-8" />
+  <title>Model Equations</title>
+  <script
+    type="text/javascript"
+    async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"
+  ></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    });
+  </script>
+</head>
+
 ## Model Description
 
 The code uses the `auto_arima` function from the `pmdarima` library to fit an ARIMA model to a given time series data. Here's the step-by-step breakdown:
