@@ -1,21 +1,3 @@
-<head>
-  <meta charset="utf-8" />
-  <title>Model Equations</title>
-  <script
-    type="text/javascript"
-    async
-    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"
-  ></script>
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$'], ['\\[', '\\]']]
-      }
-    });
-  </script>
-</head>
-
 ## Model Description
 
 The code uses the `auto_arima` function from the `pmdarima` library to fit an ARIMA model to a given time series data. Here's the step-by-step breakdown:
@@ -75,26 +57,14 @@ Where:
 
    - Once the model is fitted, the forecast for the next $n$ periods is given by:
 
-$$
-\hat{y}_{t+h} = \phi_0 + \sum_{i=1}^p \phi_i \hat{y}_{t+h-i} + \sum_{j=1}^q \theta_j \epsilon_{t+h-j}
-$$
-
-$$
-y_{t+h} = \phi_0 + \sum_{i=1}^p \phi_i y_{t+h-i} + \sum_{j=1}^q \theta_j \epsilon_{t+h-j}
-$$
-
-$$
-\hat{y}\_{t+h} = \phi_0 + \sum\_{i=1}^p \phi_i \hat{y}\_{t+h-i} + \sum\_{j=1}^q \theta_j \epsilon\_{t+h-j}
-$$
+$\hat{y}_{t+h} = \phi_0 + \sum_{i=1}^p \phi_i \hat{y}_{t+h-i} + \sum_{j=1}^q \theta_j \epsilon_{t+h-j}$
 
 Where:
 
 - $\hat{y}_{t+h}$ is the forecasted value at time $t+h$.
 - The confidence interval for the forecast is typically given by:
 
-$$
-\hat{y}_{t+h} \pm z_{\alpha/2} \cdot \sigma_{\hat{y}_{t+h}}
-$$
+$\hat{y}_{t+h} \pm z_{\alpha/2} \cdot \sigma_{\hat{y}_{t+h}}$
 
 Where $z_{\alpha/2}$ is the critical value from the normal distribution for the desired confidence level, and $\sigma_{\hat{y}_{t+h}}$ is the standard error of the forecast.
 
@@ -109,22 +79,27 @@ The ARIMA (AutoRegressive Integrated Moving Average) model is a popular statisti
    - **Definition**: The autoregressive component specifies the number of lagged observations (lags) to include in the model.
    - **Notation**: $AR(p)$
    - **Equation**:
-     $$
-     y_t = \phi_0 + \sum_{i=1}^p \phi_i y_{t-i} + \epsilon_t
-     $$
+
+$$
+y_t = \phi_0 + \sum_{i=1}^p \phi_i y_{t-i} + \epsilon_t
+$$
+
      where $y_t$ is the value at time $t$, $\phi_i$ are the coefficients of the lagged values, and $\epsilon_t$ is the error term (white noise).
 
-2. **Integrated (I) Component - $d$**:
+1. **Integrated (I) Component - $d$**:
 
    - **Definition**: The integrated component represents the number of differences needed to make the time series stationary.
    - **Notation**: $I(d)$
    - **Differencing**: Differencing is used to remove trends and seasonality from the time series. For example, if $d = 1$, the differenced series is $y_t' = y_t - y_{t-1}$.
 
-3. **Moving Average (MA) Component - $q$**:
+2. **Moving Average (MA) Component - $q$**:
+
    - **Definition**: The moving average component specifies the number of lagged forecast errors to include in the model.
    - **Notation**: $MA(q)$
    - **Equation**:
+
      $$
      y_t = \mu + \epsilon_t + \sum_{j=1}^q \theta_j \epsilon_{t-j}
      $$
+
      where $\epsilon_t$ is the error term at time $t$, and $\theta_j$ are the coefficients of the lagged error terms.
