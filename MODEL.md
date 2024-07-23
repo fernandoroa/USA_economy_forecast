@@ -57,7 +57,7 @@ Where:
 
    - Once the model is fitted, the forecast for the next $n$ periods is given by:
 
-$\hat{y}_{t+h} = \phi_0 + \sum_{i=1}^p \phi_i \hat{y}_{t+h-i} + \sum_{j=1}^q \theta_j \epsilon_{t+h-j}$
+$\hat{y}_{t+h}$ = $\phi_0 + \sum_{i=1}^p \phi_i \hat{y}_{t+h-i} + \sum_{j=1}^q \theta_j \epsilon_{t+h-j}$
 
 Where:
 
@@ -84,7 +84,7 @@ $$
 y_t = \phi_0 + \sum_{i=1}^p \phi_i y_{t-i} + \epsilon_t
 $$
 
-     where $y_t$ is the value at time $t$, $\phi_i$ are the coefficients of the lagged values, and $\epsilon_t$ is the error term (white noise).
+where $y_t$ is the value at time $t$, $\phi_i$ are the coefficients of the lagged values, and $\epsilon_t$ is the error term (white noise).
 
 1. **Integrated (I) Component - $d$**:
 
@@ -98,8 +98,8 @@ $$
    - **Notation**: $MA(q)$
    - **Equation**:
 
-     $$
-     y_t = \mu + \epsilon_t + \sum_{j=1}^q \theta_j \epsilon_{t-j}
-     $$
+$$
+y_t = \mu + \epsilon_t + \sum_{j=1}^q \theta_j \epsilon_{t-j}
+$$
 
-     where $\epsilon_t$ is the error term at time $t$, and $\theta_j$ are the coefficients of the lagged error terms.
+where $\epsilon_t$ is the error term at time $t$, and $\theta_j$ are the coefficients of the lagged error terms.
