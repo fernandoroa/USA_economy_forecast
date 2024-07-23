@@ -57,22 +57,14 @@ Where:
 
    - Once the model is fitted, the forecast for the next $n$ periods is given by:
 
-$\hat{y}_{t+h} = \phi_0 + \sum_{i=1}^p \phi_i \hat{y}_{t+h-i} + \sum_{j=1}^q \theta_j \epsilon_{t+h-j}$
-
-- $\hat{y}_{t+h} = \phi_0 + \sum_{i=1}^p \phi_i \hat{y}_{t+h-i} + \sum_{j=1}^q \theta_j \epsilon_{t+h-j}$
-
-$$
-\hat{y}_{t+h} = \phi_0 + \sum_{i=1}^p \phi_i \hat{y}_{t+h-i} + \sum_{j=1}^q \theta_j \epsilon_{t+h-j}
-$$
-
-`$\hat{y}_{t+h} = \phi_0 + \sum_{i=1}^p \phi_i \hat{y}_{t+h-i} + \sum_{j=1}^q \theta_j \epsilon_{t+h-j}$`
+$\hat{y}_{t+h}$ = $\phi_0$ + $\sum_{i=1}^p$ $\phi_i$ $\hat{y}_{t+h-i}$ + $\sum_{j=1}^q$ $\theta_j$ $\epsilon_{t+h-j}$
 
 Where:
 
 - $\hat{y}_{t+h}$ is the forecasted value at time $t+h$.
 - The confidence interval for the forecast is typically given by:
 
-$\hat{y}_{t+h} \pm z_{\alpha/2} \cdot \sigma_{\hat{y}_{t+h}}$
+$\hat{y}_{t+h}$ $\pm$ $z_{\alpha/2}$ $\cdot$ $\sigma_{\hat{y}_{t+h}}$
 
 Where $z_{\alpha/2}$ is the critical value from the normal distribution for the desired confidence level, and $\sigma_{\hat{y}_{t+h}}$ is the standard error of the forecast.
 
