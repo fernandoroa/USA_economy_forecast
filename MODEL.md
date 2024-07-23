@@ -55,9 +55,13 @@ Where:
 
 4. **Forecasting**:
 
-   - Once the model is fitted, the forecast for the next $n$ periods is given by:
+   - Once the model is fitted, the forecast for the next n periods is given by:
 
-$\hat{y}_{t+h}$ = $\phi_0$ + $\sum_{i=1}^p$ $\phi_i$ $\hat{y}_{t+h-i}$ + $\sum_{j=1}^q$ $\theta_j$ $\epsilon_{t+h-j}$
+$$
+\hat{y}_ {t+h} = \phi_0 + \sum_ {i=1}^p \phi_i \hat{y}_ {t+h-i} + \sum_ {j=1}^q \theta_j \epsilon_ {t+h-j}
+$$
+
+$\hat{y}_ {t+h} = \phi_0 + \sum_ {i=1}^p \phi_i \hat{y}_ {t+h-i} + \sum_ {j=1}^q \theta_j \epsilon_ {t+h-j}$
 
 Where:
 
